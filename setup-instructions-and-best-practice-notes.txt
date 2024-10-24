@@ -1,0 +1,46 @@
+Instructions to automate a test scenario using selenium webdriver and javascript: 
+
+1. Install node.js by going to nodejs.org then Downloads -> prebuilt installer, and selecting your preferred version and operating system details. Follow the steps in the wizard to complete the installation. 
+
+2. In your local storage, create the folder in which you will hold your automation project. 
+
+3. Install a code editor, recommended is Visual Studio Code (code.visualstudio.com -> download -> select your preferred operating system installer). 
+
+4. Once your editor is installed, open it and use it to open the folder you created in step 2. (File -> Open Folder)
+
+5. Open the terminal within your editor (Ctrl + Shift + ` or using the menu options Terminal -> New Terminal).
+
+6. Verify you have successfully installed node by checking its version using the following command (write the command in the terminal, then press Enter, do the same for the next few steps): 
+node -v
+
+7. Make a new directory in your folder:
+mkdir quality-house-test
+
+8. Navigate to the directory
+cd quality-house-test
+
+9. Initialise the automation project
+npm init -y
+
+9. Install the necessary selenium webdriver (the following command will install the driver for Chrome, but you may choose whichever browser you prefer, look online for the command for your preference):
+npm install selenium-webdriver chromedriver
+
+If the last two steps has=ve been performed successfully, you will see the following in your quality-house-test folder: 
+- a new folder called node_modules
+- a file called package-lock.json
+- a file called package.json 
+
+10. Add a .js file within the same folder as the files listed above. Name it whatever you wish, I have used quality-house-test.js.
+
+11. In the .js file created above, write your automation script, including any browser options you may choose (I have chosen to open the browser instead of using headless mode, and to explicitly maximise the window to make element location using xpath more reliable). Use the following command to run your test:
+node file-name.js 
+
+
+Recommendations and best practices:
+1. Implement your tests step by step, running it after each step implementation to ensure success. Writing everything first then running your test for the first time will make debugging harder later on. 
+
+2. Test your tests! As you write, even if your tests are successful, break them so you can ensure you're not getting a false positive. For example, if you're checking whether a specific text is displayed, change your expected text to something else to verify that if there are differences between the two your test will fail successfully.
+
+3. When identifying elements, try to remain consistent with the method you have selected (eg. by ID or xpath). Of course in some instances this will not be possible, but use your discretion when you encounter those instances.
+
+4. Use comments to clarify what your code is doing in human language. This will make your code more maintainable both for you and for anyone else who may encounter it in the future. 
